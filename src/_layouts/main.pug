@@ -1,0 +1,40 @@
+- const siteTitle = 'Bespoke Media'
+- const description = 'We provide a range of new media services such as websites and apps for sales, marketing and business. We design each project to a unique spec, crafted and briefed in detailed collaboration with each client.'
+- const themeColor = '#CFE1E5'
+- const email = 'contact@bespokemedia.net'
+doctype html 
+html(lang='en')
+  head 
+    meta(charset='utf-8')
+    if title
+      title #{title} - #{siteTitle}
+    else
+      title #{siteTitle}
+    meta(name='description' content=description)
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    meta(name='theme-color' content=themeColor)
+    link(rel='stylesheet' href='/tailwind.css')
+  body.min-h-screen.flex.flex-col
+    section.order-5.bm-bg-dark.pb-8.uppercase
+      .bm-container.px-2 
+        ul.flex.flex-wrap.justify-center.gap-4
+          each val in stack 
+            li.text-sm.bg-slate-50.px-4.py-2 #{val}
+    section.order-4.py-4.bm-bg-dark.text-slate-50.uppercase
+      .bm-container.px-2 
+        ul.flex.flex-wrap.justify-center.gap-4
+          each val in services 
+            li.text-xl #{val}
+    main.order-3.px-2.py-8.bm-bg-white
+      .bm-container.text-center.px-2 !{content}
+    header.bm-bg-dark.text-slate-50.text-xl.order-1
+      .bm-container.flex.flex-row.items-center
+        h2.px-6.py-6.grow.bm-logo Bespoke Media
+        a.px-5.py-2.mx-5.uppercase.bm-bg-black.font-thin(href='mailto:' + email) Contact
+    if heroTitle
+      section.order-2.bm-bg-img-laptops
+        .bm-container.flex.items-center.justify-center.bm-h-33vh.px-4
+          h2.text-4xl.text-center.uppercase.text-slate-50.font-thin.z-10 #{heroTitle}
+    section.order-6.grow.bm-bg-grey.py-8
+      .bm-container.px-4.text-center
+        p Get in touch today: #[a.font-bold(href='mailto:' + email) #{email}]

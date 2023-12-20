@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bm-h-33vh {
+  height: 33vh;
+}
+
+.bm-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+main h1:first-of-type {
+  display: none;
+}
+
+.bm-bg-img-laptops {
+  background-image: url(/img/bm-laptops-background.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.bm-bg-img-laptops:after {
+  backdrop-filter: brightness(0.5);
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.bm-bg-dark {
+  background-color: #3D5E66;
+}
+.bm-bg-white {
+  background-color: #F0F8FA;
+}
+.bm-bg-grey {
+  background-color: #CFE1E5;
+}
+.bm-bg-black {
+  background-color: #10191B;
+}
+
+.bm-logo {
+  font-weight: 400;
+  letter-spacing: -.1rem;
+}
