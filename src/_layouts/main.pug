@@ -15,26 +15,26 @@ html(lang='en')
     meta(name='theme-color' content=themeColor)
     link(rel='stylesheet' href='/tailwind.css')
   body.min-h-screen.flex.flex-col
-    section.order-5.bm-bg-dark.pb-8.uppercase
-      .bm-container.px-2 
+    section.order-5.pb-6.uppercase.bm-bg-white
+      .px-2 
         ul.flex.flex-wrap.justify-center.gap-4
           each val in stack 
-            li.text-sm.bg-slate-50.px-4.py-2 #{val}
-    section.order-4.py-4.bm-bg-dark.text-slate-50.uppercase
-      .bm-container.px-2 
+            li.text-sm.bm-bg-grey.px-4.py-2 #{val}
+    section.order-4.py-4.uppercase.bm-bg-white
+      .px-2 
         ul.flex.flex-wrap.justify-center.gap-4
           each val in services 
             li.text-xl #{val}
     main.order-3.px-2.py-8.bm-bg-white
-      .bm-container.text-center.px-2 !{content}
+      .text-center.max-w-lg.mx-auto.px-2 !{content}
     header.bm-bg-dark.text-slate-50.text-xl.order-1
-      .bm-container.flex.flex-row.items-center
+      .flex.flex-row.items-center
         h2.px-6.py-6.grow.bm-logo Bespoke Media
         a.px-5.py-2.mx-5.uppercase.bm-bg-black.font-thin(href='mailto:' + email) Contact
     if heroTitle
-      section.order-2.bm-bg-img-laptops
-        .bm-container.flex.items-center.justify-center.bm-h-33vh.px-4
-          h2.text-4xl.text-center.uppercase.text-slate-50.font-thin.z-10 #{heroTitle}
-    section.order-6.grow.bm-bg-grey.py-8
-      .bm-container.px-4.text-center
+      section.order-2.bm-bg-img-laptops.grow.flex.flex-col
+        .flex.items-center.justify-center.px-4.grow
+          h2.text-4xl.text-center.uppercase.text-slate-50.z-10.bm-hero-title #{heroTitle}
+    section.order-6.bm-bg-dark.text-slate-50.py-4
+      .px-4.text-center
         p Get in touch today: #[a.font-bold(href='mailto:' + email) #{email}]
